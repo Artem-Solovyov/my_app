@@ -1,8 +1,13 @@
+import profileReducer from "./profile_reducer";
+import dialogsReducer from "./dialogs_reducer";
+import sidebarReducer from "./sidebar_reducer";
+
 const ADD_POST = 'ADD-POST';
 const ADD_NEW_POST_TEXT = 'ADD-NEW-POST-TEXT';
 
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const ADD_NEW_MESSAGE_TEXT = 'ADD-NEW-MESSAGE-TEXT';
+
 let store = {
   _state: {
     profilePage: {
@@ -33,6 +38,7 @@ let store = {
       ],
       newMessageBody: ''
     },
+    sidebar: {},
   },
   _callSubscribe() {
   },
@@ -43,45 +49,13 @@ let store = {
     this._callSubscribe = observer
   },
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        post: this._state.profilePage.newPostText,
-        likesCount: 0,
-      }
-      this._state.profilePage.posts.unshift(newPost)
-      this._state.profilePage.newPostText = ''
-      this._callSubscribe(this._state)
-    } else if (action.type === ADD_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText
-      this._callSubscribe(this._state)
-    } else if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        id: 5,
-        message: this._state.dialogsPage.newMessageBody,
-      }
-      this._state.dialogsPage.messages.push(newMessage)
-      this._state.dialogsPage.newMessageBody = ''
-      this._callSubscribe(this._state)
-    } else if (action.type === ADD_NEW_MESSAGE_TEXT) {
-      this._state.dialogsPage.newMessageBody = action.newText
-      this._callSubscribe(this._state)
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action)
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action)
+    this._callSubscribe(this._state)
   },
 }
-export const actionCreatorAddPost = () => ({
-  type: ADD_POST
-})
-export const actionCreatorAddPostText = (text) => ({
-  type: ADD_NEW_POST_TEXT,
-  newText: text
-})
-export const actionCreatorAddMessage = () => ({
-  type: ADD_MESSAGE
-})
-export const actionCreatorAddMessageText = (text) => ({
-  type: ADD_NEW_MESSAGE_TEXT,
-  newText: text
-})
+
+
 
 export default store
