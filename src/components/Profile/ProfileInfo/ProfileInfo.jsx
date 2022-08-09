@@ -7,13 +7,13 @@ const ProfileInfo = () => {
       <div>
         <div>
           <img
-              src="https://www.kultur-port.de/images/stories/blog/2022/Horizont_F_Pexelspixabay.jpg"
+              src="https://upload.wikimedia.org/wikipedia/ru/c/c8/Rick_and_Morty_logo.png"
               className={s.first_img} alt='ava'/>
         </div>
         {/* avatar and description */}
         <div className={s.discription_block}>
           <img
-              src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="http://pngimg.com/uploads/rick_morty/rick_morty_PNG34.png"
               className={s.second_img}  alt='ava'
           />
         </div>
