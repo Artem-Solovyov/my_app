@@ -2,6 +2,7 @@ import React from "react";
 
 import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus"
 
 const ProfileInfo = (props) => {
   if (!props.profile){
@@ -9,17 +10,15 @@ const ProfileInfo = (props) => {
   }
   return (
       <div>
-        <div>
-          <img
-              src="https://upload.wikimedia.org/wikipedia/ru/c/c8/Rick_and_Morty_logo.png"
-              className={s.first_img} alt='ava'/>
-        </div>
+        {/*<div>*/}
+        {/*  <img*/}
+        {/*      src="https://upload.wikimedia.org/wikipedia/ru/c/c8/Rick_and_Morty_logo.png"*/}
+        {/*      className={s.first_img} alt='ava'/>*/}
+        {/*</div>*/}
         {/* avatar and description */}
         <div className={s.discription_block}>
-          <img
-              src={props.profile.photos.large}
-              className={s.second_img}  alt='ava'
-          />
+          <img src={props.profile.photos.large} className={s.second_img}  alt='ava'/>
+          <ProfileStatus status={"Hello WORLD!!!"}/>
         </div>
       </div>
   )
