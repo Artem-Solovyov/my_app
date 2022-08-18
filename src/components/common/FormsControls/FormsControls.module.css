@@ -1,0 +1,16 @@
+.form_control{
+}
+.form_control.error input,
+.form_control.error textarea {
+  border: solid red 2px;
+}
+.form_control.error span {
+  color: brown;
+}
+.form_summary_error {
+  display: inline-block;
+  border: solid 3px brown;
+  padding: 5px;
+  color: brown;
+  font-weight: bold;
+}

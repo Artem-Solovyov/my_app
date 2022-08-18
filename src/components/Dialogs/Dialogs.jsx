@@ -2,7 +2,9 @@ import React from "react";
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./MessageItem/Message";
-import {Navigate} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../common/FormsControls/FormsControls";
+import {maxLengthCreator, required} from "../../utils/validators/validators";
 
 const Dialogs = (props) => {
 
@@ -10,12 +12,9 @@ const Dialogs = (props) => {
 
   let messageElements = props.dialogsPage.messages.map(m => <Message message={m.message} key={m.id}></Message>)
 
-  let onAddMessage = () => {
-    props.addMessage()
-  }
-  let onMessageChang = (event) => {
-    let text = event.target.value
-    props.addMessageNewText(text)
+  let addNewMessage = (values) => {
+
+    props.addMessage(values.newMessageBody)
   }
 
   return (
@@ -25,13 +24,22 @@ const Dialogs = (props) => {
         </div>
         <div className={s.messages}>
           {messageElements}
-          <div>
-            <textarea name="" placeholder='Enter your message' onChange={onMessageChang}  id="" cols="40" rows="3"
-                      value={props.dialogsPage.newMessageBody}/>
-            <button onClick={onAddMessage}>Send</button>
-          </div>
+            <AddMessageFormRedux onSubmit={addNewMessage}/>
         </div>
       </div>)
 }
-
+const AddMessageForm = (props) => {
+  return (
+      <form onSubmit={props.handleSubmit}>
+        <div>
+          <Field component={Textarea} name={"newMessageBody"} placeholder='Enter your message'
+                 validate={[required, maxLengthCreator(100)]}/>
+        </div>
+        <div>
+          <button>Send</button>
+        </div>
+      </form>
+  )
+}
+const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm)
 export default Dialogs
