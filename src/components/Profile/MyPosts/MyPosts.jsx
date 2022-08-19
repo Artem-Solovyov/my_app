@@ -6,9 +6,8 @@ import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Textarea} from "../../common/FormsControls/FormsControls";
 
 
-const MyPosts = (props) => {
-
-
+const MyPosts = props => {
+  console.log("Render")
   let postElements = props.posts.map(p => <Post text={p.post} key={p.id} like={p.likesCount}/>)
 
   let addNewPost = (values) => {
@@ -27,7 +26,8 @@ const MyPosts = (props) => {
         </div>
       </div>
   )
-}
+};
+
 const AddNewPostForm = (props) => {
   return (
       <form onSubmit={props.handleSubmit}>

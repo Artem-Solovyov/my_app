@@ -1,0 +1,10 @@
+.number {
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.pageSelected {
+  font-weight: bold;
+  font-size: 18px;
+}
