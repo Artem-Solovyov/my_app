@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/my_app/static/css/main.3dd79e10.css",
+    "main.js": "/my_app/static/js/main.f95208a6.js",
+    "static/css/437.0c5fc969.chunk.css": "/my_app/static/css/437.0c5fc969.chunk.css",
+    "static/js/437.a39c5eab.chunk.js": "/my_app/static/js/437.a39c5eab.chunk.js",
+    "static/css/419.739bb788.chunk.css": "/my_app/static/css/419.739bb788.chunk.css",
+    "static/js/419.fcef1f28.chunk.js": "/my_app/static/js/419.fcef1f28.chunk.js",
+    "static/js/787.28cb0dcd.chunk.js": "/my_app/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Preloader.gif": "/my_app/static/media/Preloader.c0c2f01083736d90f19a.gif",
+    "static/media/Morty1.png": "/my_app/static/media/Morty1.46243007b57cff2b2445.png",
+    "index.html": "/my_app/index.html",
+    "main.3dd79e10.css.map": "/my_app/static/css/main.3dd79e10.css.map",
+    "main.f95208a6.js.map": "/my_app/static/js/main.f95208a6.js.map",
+    "437.0c5fc969.chunk.css.map": "/my_app/static/css/437.0c5fc969.chunk.css.map",
+    "437.a39c5eab.chunk.js.map": "/my_app/static/js/437.a39c5eab.chunk.js.map",
+    "419.739bb788.chunk.css.map": "/my_app/static/css/419.739bb788.chunk.css.map",
+    "419.fcef1f28.chunk.js.map": "/my_app/static/js/419.fcef1f28.chunk.js.map",
+    "787.28cb0dcd.chunk.js.map": "/my_app/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dd79e10.css",
+    "static/js/main.f95208a6.js"
+  ]
+}
