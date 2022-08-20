@@ -8,3 +8,18 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+.pageNumber {
+  padding: 2px;
+
+}
+
+.pageNumber.selectedPage {
+  font-weight: bold;
+
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}

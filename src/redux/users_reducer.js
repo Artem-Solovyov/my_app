@@ -10,7 +10,7 @@ const TOGGLE_IS_FETCHING = 'users/TOGGLE_IS_FETCHING'
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'users/TOGGLE_IS_FOLLOWING_PROGRESS'
 
 let initialState = {
-  users: [], pageSize: 100, totalUserCount: 0, currentPage: 1, isFetching: true, followingInProgress: [],
+  users: [], pageSize: 20, totalUserCount: 0, currentPage: 1, isFetching: true, followingInProgress: [],
 }
 
 const usersReducer = (state = initialState, action) => {
