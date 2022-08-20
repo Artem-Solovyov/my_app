@@ -5,6 +5,9 @@
 .discription_block {
   padding: 20px;
 }
-.second_img {
-  width: 200px;
+.mainPhoto {
+  width: 250px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 2px blue;
+  border-radius: 15px;
 }
