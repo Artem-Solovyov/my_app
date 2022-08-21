@@ -3,24 +3,43 @@
   height: 200px;
 }
 .discription_block {
+  display: grid;
+  grid-template-columns: 400px auto;
   padding: 20px;
 }
 .mainPhoto {
-  width: 250px;
+  width: 300px;
   border: 2px solid white;
   box-shadow: 2px 2px 2px blue;
   border-radius: 15px;
 }
 .containerMainPhoto {
-  display: inline-block;
   position: relative;
 }
 .savePhoto {
   position: absolute;
-  left: 20px;
+  left: 45px;
   bottom: 10px;
   display:none;
 }
 .containerMainPhoto:hover .savePhoto {
   display:block;
+}
+.containerInfoUser {
+}
+.name {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+.userInfo{
+  margin-left: 20px;
+}
+.contacs {
+  margin-left: 20px;
+}
+.status {
+  margin-top: -20px;
+}
+.edit {
+  text-align: right;
 }
