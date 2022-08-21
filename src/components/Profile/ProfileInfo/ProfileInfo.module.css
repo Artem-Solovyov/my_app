@@ -11,3 +11,16 @@
   box-shadow: 2px 2px 2px blue;
   border-radius: 15px;
 }
+.containerMainPhoto {
+  display: inline-block;
+  position: relative;
+}
+.savePhoto {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  display:none;
+}
+.containerMainPhoto:hover .savePhoto {
+  display:block;
+}
