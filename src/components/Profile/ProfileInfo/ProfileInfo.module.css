@@ -19,7 +19,7 @@
 .savePhoto {
   position: absolute;
   left: 45px;
-  bottom: 10px;
+  top: 10px;
   display:none;
 }
 .containerMainPhoto:hover .savePhoto {
