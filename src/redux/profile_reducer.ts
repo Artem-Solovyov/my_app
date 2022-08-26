@@ -1,7 +1,7 @@
 import {FormAction, stopSubmit} from "redux-form";
 import {photosType, postsType, profileType} from "../types/types";
 import {profileAPI} from "../api/profileAPI";
-import {ResulCodeEnum} from "../api/api";
+import {ResultCodeEnum} from "../api/api";
 import {BaseThunkType, InferActionsTypes} from "./redux_store";
 
 let initialState = {
@@ -89,7 +89,7 @@ export const saveProfile = (profile: profileType): ThunkType  => async (dispatch
   const userId = getState().auth.id
   const data = await profileAPI.saveProfile(profile)
   debugger
-  if (data.resultCode === ResulCodeEnum.Success) {
+  if (data.resultCode === ResultCodeEnum.Success) {
     if (userId != null) {
       dispatch(getUserProfile(userId))
     } else {
