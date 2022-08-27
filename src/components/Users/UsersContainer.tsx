@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
+  FilterType,
   follow,
   requestUsers,
   unfollow,
@@ -13,7 +14,7 @@ import {
   getIsFetching,
   getPageSize,
   getTotalUserCount,
-  getUsers
+  getUsers, getUsersFilter
 } from "../../redux/users_selectors";
 import {userType} from "../../types/types";
 import {AppStateType} from "../../redux/redux_store";
@@ -25,23 +26,27 @@ type mapStatePropsType = {
   currentPage: number,
   isFetching: boolean,
   followingInProgress: Array<number>
+  filter: FilterType
 }
 type mapDispatchPropsType = {
   follow: (userId: number) => void,
   unfollow: (userId: number) => void,
-  getUsers: (currentPage: number, pageSize: number) => void
+  getUsers: (currentPage: number, pageSize: number, filter: FilterType) => void
 }
 type propsType = mapStatePropsType & mapDispatchPropsType
 
 class UsersContainer extends React.Component<propsType> {
 
   componentDidMount() {
-    const {currentPage, pageSize} = this.props
-    this.props.getUsers(currentPage, pageSize)
+    const {currentPage, pageSize, filter} = this.props
+    this.props.getUsers(currentPage, pageSize, filter)
   }
 
   onPageChanged = (pageNumber: number) => {
-    this.props.getUsers(pageNumber, this.props.pageSize)
+    this.props.getUsers(pageNumber, this.props.pageSize, this.props.filter)
+  }
+  onFilterChanged = (filter: FilterType) => {
+    this.props.getUsers(1, this.props.pageSize, filter)
   }
 
   render() {
@@ -55,6 +60,7 @@ class UsersContainer extends React.Component<propsType> {
              unfollow={this.props.unfollow}
              onPageChanged={this.onPageChanged}
              followingInProgress={this.props.followingInProgress}
+             onFilterChanged={this.onFilterChanged}
       />
     </>
   }
@@ -67,6 +73,7 @@ let mapStateToProps = (state: AppStateType): mapStatePropsType => ({
   currentPage: getCurrentPage(state),
   isFetching: getIsFetching(state),
   followingInProgress: getFollowingInProgress(state),
+  filter: getUsersFilter(state)
 })
 
 let mapDispatchToProps: mapDispatchPropsType = {
