@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my_app/static/css/main.aab9ec0e.css",
-    "main.js": "/my_app/static/js/main.baf52933.js",
+    "main.js": "/my_app/static/js/main.8123cbc9.js",
     "static/css/692.21ae427b.chunk.css": "/my_app/static/css/692.21ae427b.chunk.css",
     "static/js/692.02f4847b.chunk.js": "/my_app/static/js/692.02f4847b.chunk.js",
     "static/css/834.1ad8caae.chunk.css": "/my_app/static/css/834.1ad8caae.chunk.css",
@@ -11,7 +11,7 @@
     "static/media/Morty1.png": "/my_app/static/media/Morty1.46243007b57cff2b2445.png",
     "index.html": "/my_app/index.html",
     "main.aab9ec0e.css.map": "/my_app/static/css/main.aab9ec0e.css.map",
-    "main.baf52933.js.map": "/my_app/static/js/main.baf52933.js.map",
+    "main.8123cbc9.js.map": "/my_app/static/js/main.8123cbc9.js.map",
     "692.21ae427b.chunk.css.map": "/my_app/static/css/692.21ae427b.chunk.css.map",
     "692.02f4847b.chunk.js.map": "/my_app/static/js/692.02f4847b.chunk.js.map",
     "834.1ad8caae.chunk.css.map": "/my_app/static/css/834.1ad8caae.chunk.css.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.aab9ec0e.css",
-    "static/js/main.baf52933.js"
+    "static/js/main.8123cbc9.js"
   ]
 }
