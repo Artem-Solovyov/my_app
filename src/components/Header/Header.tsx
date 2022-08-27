@@ -2,7 +2,6 @@ import React from "react";
 import styles from './Header.module.css'
 import {NavLink} from "react-router-dom";
 
-
 export type StatePropsType = {
   isAuth: boolean
   login: string | null

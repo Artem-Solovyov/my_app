@@ -5,7 +5,7 @@ import {
   Route, HashRouter, Navigate,
 } from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/login/Login";
+import {Login} from "./components/login/Login";
 import React, {Component, ComponentType} from "react";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -14,10 +14,10 @@ import Preloader from "./components/common/Preloader/Preloader";
 import store, {AppStateType} from "./redux/redux_store";
 import {withRouter} from "./components/Profile/ProfileContainer";
 import {withSuspense} from "./hoc/withSuspense";
+import {UsersPage} from "./components/Users/UsersContainer";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"))
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"))
-const UsersContainer = React.lazy(() => import("./components/Users/UsersContainer"))
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -51,7 +51,7 @@ class App extends Component<StatePropsType & DispatchPropsType> {
                 <Route path='/dialogs/*' element={<SuspenseDialogsContainer/>}/>
                 {/*<Route path='/news' element={<News/>}/>*/}
                 {/*<Route path='/music' element={<Music/>}/>*/}
-                <Route path='/users' element={<UsersContainer/>}/>
+                <Route path='/users' element={<UsersPage/>}/>
                 {/*<Route path='/settings' element={<Settings/>}/>*/}
                 <Route path='/login' element={<Login/>}/>
               </Routes>
