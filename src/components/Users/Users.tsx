@@ -13,6 +13,7 @@ import {
 } from "../../redux/users_selectors";
 import {useDispatch, useSelector} from "react-redux";
 import {AnyAction} from "redux";
+import { useSearchParams} from "react-router-dom";
 
 type propsType = {}
 
@@ -25,8 +26,17 @@ export const Users: FC<propsType> = (props) => {
   const filter = useSelector(getUsersFilter)
   const followingInProgress = useSelector(getFollowingInProgress)
 
-
   const dispatch = useDispatch()
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  useEffect(() => {
+    let search: any = {
+      term: filter.term,
+      friend: filter.friend,
+      page: currentPage
+    }
+    setSearchParams(search, {replace: true})
+  }, [filter, currentPage])
 
   const onPageChanged = (pageNumber: number) => {
     dispatch(requestUsers(pageNumber, pageSize, filter) as unknown as AnyAction)
@@ -41,7 +51,32 @@ export const Users: FC<propsType> = (props) => {
     dispatch(actions.followSuccess(userId) as unknown as AnyAction)
   }
   useEffect(() => {
-    dispatch(requestUsers(currentPage, pageSize, filter) as unknown as AnyAction)
+    const result: any = {}
+    // @ts-ignore
+    for (const [key, value] of searchParams.entries()) {
+      let values: any = +value
+      if (isNaN(values)) {
+        values = value
+      }
+      if (value === 'true') {
+        values = true
+      } else if (value === 'false') {
+        values = false
+      }
+      result[key] = values
+    }
+
+    let actualPage = result.page || currentPage
+    let term = result.term || filter.term
+
+    let friend = result.friend || filter.friend
+    if (result.friend === false) {
+      friend = result.friend
+    }
+
+    const actualFilter = {friend, term}
+
+    dispatch(requestUsers(actualPage, pageSize, actualFilter) as unknown as AnyAction)
   }, [])
   return (
     <div>

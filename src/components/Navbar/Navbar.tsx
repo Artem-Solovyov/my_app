@@ -15,6 +15,11 @@ const Navbar: React.FC = () => {
           }>Messages</NavLink>
         </div>
         <div>
+          <NavLink to='/users' className={(data) =>
+            data.isActive ? s.active : s.item
+          }>Find users</NavLink>
+        </div>
+        <div>
           <NavLink to='/news' className={(data) =>
               data.isActive ? s.active : s.item}>News</NavLink>
         </div>
@@ -22,11 +27,7 @@ const Navbar: React.FC = () => {
           <NavLink to='/music' className={(data) =>
               data.isActive ? s.active : s.item}>Music</NavLink>
         </div>
-        <div>
-          <NavLink to='/users' className={(data) =>
-              data.isActive ? s.active : s.item
-          }>Find users</NavLink>
-        </div>
+
         <div>
           <NavLink to='/settings' className={(data) =>
               data.isActive ? s.active : s.item}>Settings</NavLink>
