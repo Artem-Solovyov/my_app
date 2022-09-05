@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/my_app/static/css/main.aab9ec0e.css",
-    "main.js": "/my_app/static/js/main.8123cbc9.js",
+    "main.css": "/my_app/static/css/main.49bb44ce.css",
+    "main.js": "/my_app/static/js/main.c4241c23.js",
     "static/css/692.21ae427b.chunk.css": "/my_app/static/css/692.21ae427b.chunk.css",
     "static/js/692.02f4847b.chunk.js": "/my_app/static/js/692.02f4847b.chunk.js",
-    "static/css/834.1ad8caae.chunk.css": "/my_app/static/css/834.1ad8caae.chunk.css",
-    "static/js/834.c65f7157.chunk.js": "/my_app/static/js/834.c65f7157.chunk.js",
+    "static/js/925.c9987bfe.chunk.js": "/my_app/static/js/925.c9987bfe.chunk.js",
     "static/js/787.28cb0dcd.chunk.js": "/my_app/static/js/787.28cb0dcd.chunk.js",
     "static/media/Preloader.gif": "/my_app/static/media/Preloader.c0c2f01083736d90f19a.gif",
     "static/media/Morty1.png": "/my_app/static/media/Morty1.46243007b57cff2b2445.png",
     "index.html": "/my_app/index.html",
-    "main.aab9ec0e.css.map": "/my_app/static/css/main.aab9ec0e.css.map",
-    "main.8123cbc9.js.map": "/my_app/static/js/main.8123cbc9.js.map",
+    "main.49bb44ce.css.map": "/my_app/static/css/main.49bb44ce.css.map",
+    "main.c4241c23.js.map": "/my_app/static/js/main.c4241c23.js.map",
     "692.21ae427b.chunk.css.map": "/my_app/static/css/692.21ae427b.chunk.css.map",
     "692.02f4847b.chunk.js.map": "/my_app/static/js/692.02f4847b.chunk.js.map",
-    "834.1ad8caae.chunk.css.map": "/my_app/static/css/834.1ad8caae.chunk.css.map",
-    "834.c65f7157.chunk.js.map": "/my_app/static/js/834.c65f7157.chunk.js.map",
+    "925.c9987bfe.chunk.js.map": "/my_app/static/js/925.c9987bfe.chunk.js.map",
     "787.28cb0dcd.chunk.js.map": "/my_app/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aab9ec0e.css",
-    "static/js/main.8123cbc9.js"
+    "static/css/main.49bb44ce.css",
+    "static/js/main.c4241c23.js"
   ]
 }
