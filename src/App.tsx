@@ -18,6 +18,7 @@ import AppHeader from "./components/Header/Header";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"))
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"))
+const ChatPage = React.lazy(() => import("./pages/Chat/ChatPage"))
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -25,6 +26,7 @@ type DispatchPropsType = {
 }
 const SuspenseDialogsContainer = withSuspense(DialogsContainer)
 const SuspenseProfileContainer = withSuspense(ProfileContainer)
+const SuspenseChatPage = withSuspense(ChatPage)
 
 const {Content, Footer, Sider} = Layout;
 
@@ -60,7 +62,10 @@ class App extends Component<StatePropsType & DispatchPropsType> {
                   <Menu.Item key={"2"}><Link to='/dialogs'>Messages</Link></Menu.Item>
                 </SubMenu>
                 <SubMenu key={"sub2"} icon={<LaptopOutlined/>} title={"Developers"}>
-                  <Menu.Item key={"1"}><Link to='/users'>Users</Link></Menu.Item>
+                  <Menu.Item key={"3"}><Link to='/users'>Users</Link></Menu.Item>
+                </SubMenu>
+                <SubMenu key={"sub3"} icon={<LaptopOutlined/>} title={"Dialogs"}>
+                  <Menu.Item key={"4"}><Link to='/chat'>Chat</Link></Menu.Item>
                 </SubMenu>
               </Menu>
             </Sider>
@@ -73,6 +78,7 @@ class App extends Component<StatePropsType & DispatchPropsType> {
                   </Route>
                   <Route path='/dialogs/*' element={<SuspenseDialogsContainer/>}/>
                   <Route path='/users' element={<UsersPage/>}/>
+                  <Route path='/chat' element={<SuspenseChatPage/>}/>
                   <Route path='/login' element={<Login/>}/>
                 </Routes>
               </React.Suspense>

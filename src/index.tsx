@@ -8,9 +8,9 @@ import {MainApp} from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
       <MainApp/>
-    </React.StrictMode>
+    // </React.StrictMode>
 );
 
 
